@@ -16,6 +16,13 @@ Plugin 'gmarik/Vundle.vim'
 " ..........................................................................
 " Plugin 'tpope/vim-fugitive'
 Plugin 'mattn/emmet-vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'kien/ctrlp.vim'
+Plugin 'klen/python-mode'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'Valloric/YouCompleteMe'
 " ..........................................................................
 " plugin from http://vim-scripts.org/vim/scripts.html
 " ..........................................................................
@@ -53,3 +60,79 @@ filetype plugin indent on    " required
 " emmet config
 "  Enable in different mode
 let g:user_emmet_mode='a'    "enable all function in all mode.
+
+
+" Automatic reloading of .vimrc
+autocmd! bufwritepost .vimrc source %
+
+" Better copy & paste
+set pastetoggle=<F2>
+set clipboard=unnamed
+
+" Mouse and backspace
+" set mouse=a
+" set bs=2
+
+" Rebind <Leader> key
+let mapleader = ","
+
+" Bind nohl
+" Removes hightlight of your last search
+noremap <C-n> :nohl<CR>
+vnoremap <C-n> :nohl<CR>
+inoremap <C-n> :nohl<CR>
+
+" easier moving of code blocks
+vnoremap < <gv
+vnoremap > >gv
+
+" Enable syntax highlighting
+" You need to reload this file for change to 
+filetype off
+filetype plugin indent on
+syntax on
+
+" Showing line numbers and length
+set number  " show line numbers
+
+" Real programmers don't use TABs but space
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set expandtab
+
+" Make search case insensitive
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+" Settings for Powerline
+set laststatus=2
+set t_Co=256
+
+" Settings for color theme
+" syntax enable
+" set background=dark
+" colorscheme solarized
+" let g:solarized_termcolors=256
+
+" Settings for ctrlp
+" let g:ctrlp_max_height
+set wildignore+=*.pyc
+set wildignore+=_build/*
+set wildignore+=*/coverage/*
+
+" Settings for NERDTree
+map <C-e> :NERDTreeToggle<CR>
+
+" Settings for python-mode
+map <Leader>g :call RepeGotoDefinition()<CR>
+let ropevim_enable_shortcuts = 1
+let g:pymode_repo_goto_def_newwin = "vnew"
+let g:pymode_repo_extended_complete = 1
+let g:pymode_breakpoint = 0
+let g:pymode_syntax = 1
+let g:pymode_syntax_builtin_objs = 0
+let g:pymode_syntax_builtin_funcs = 0
