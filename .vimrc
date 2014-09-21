@@ -82,9 +82,27 @@ noremap <C-n> :nohl<CR>
 vnoremap <C-n> :nohl<CR>
 inoremap <C-n> :nohl<CR>
 
-" easier moving of code blocks
+" Reselect visual block after indent/outdent
 vnoremap < <gv
 vnoremap > >gv
+
+" Easy split navigation
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+map <C-h> <C-w>h
+
+" easier moving between tabs
+map <Leader>n <ESC>:tabprevious<CR>
+map <Leader>m <ESC>:tabnext<CR>
+
+" The Smash Escape
+inoremap jk <Esc>
+inoremap kj <Esc>
+
+" Insert blank lines without going into insert mode
+nmap t o<ESC>k
+nmap T O<ESC>j
 
 " Enable syntax highlighting
 " You need to reload this file for change to 
@@ -107,17 +125,6 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-
-" bind Ctrl+<movement> keys to move around the windows,
-" instand of using <C-w> + <movement>
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
-
-" easier moving between tabs
-map <Leader>n <ESC>:tabprevious<CR>
-map <Leader>m <ESC>:tabnext<CR>
 
 " Settings for Powerline
 set laststatus=2
