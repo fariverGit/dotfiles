@@ -11,6 +11,7 @@ sudo add-apt-repository ppa:git-core/ppa
 sudo apt-get update
 sudo apt-get install -y aptitude build-essential linux-headers-$(uname -r) python-dev cmake git vim openssh-server
 
+# Install vim and plugins
 [[ -d .vim/bundle/Vundle.vim ]] \
   || git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
