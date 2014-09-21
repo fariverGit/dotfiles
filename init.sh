@@ -16,3 +16,17 @@ sudo apt-get install -y aptitude build-essential linux-headers-$(uname -r) pytho
   || git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 ./.vim/bundle/YouCompleteMe/install.sh
+
+# Install python environment
+sudo apt-get install -y python-pip
+sudo pip install -U pip virtualenv virtualenvwrapper --index-url http://mirrors.aliyun.com/pypi/simple/
+mkdir -p ~/workspace/pyproj
+cat >> ~/.bashrc <<_CAT;
+
+# Settings for virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/workspace/pyproj
+export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper_lazy.sh
+
+_CAT
