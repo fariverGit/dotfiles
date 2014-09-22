@@ -9,7 +9,8 @@ echo "$USER ALL=(ALL) NOPASSWD :ALL" >> /etc/sudoers
 sudo add-apt-repository ppa:fcwu-tw/ppa
 sudo add-apt-repository ppa:git-core/ppa
 sudo apt-get update
-sudo apt-get install -y aptitude build-essential linux-headers-$(uname -r) python-dev cmake git vim openssh-server
+sudo apt-get install -y aptitude build-essential linux-headers-$(uname -r) \
+  python-dev cmake git vim openssh-server
 
 # Download dotfiles
 git init
