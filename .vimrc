@@ -120,6 +120,10 @@ set shiftwidth=4
 set shiftround
 set expandtab
 
+" Settings for NERDCommenter
+let g:NERDSpaceDelims = 1
+let g:NERDRemoveExtraSpaces = 1
+
 " Make search case insensitive
 set hlsearch
 set incsearch
@@ -129,6 +133,12 @@ set smartcase
 " Settings for Powerline
 set laststatus=2
 set t_Co=256
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+
+" Settings for YouCompleteMe
+let g:ycm_show_diagnostics_ui = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " Settings for color theme
 " syntax enable
@@ -146,11 +156,21 @@ set wildignore+=*/coverage/*
 map <C-e> :NERDTreeToggle<CR>
 
 " Settings for python-mode
+" Activate rope
+" Keys:
+" K             Show python docs
+" <Ctrl-Space>  Rope autocomplete
+" <Ctrl-c>g     Rope goto definition
+" <Ctrl-c>d     Rope show documentation
+" <Ctrl-c>f     Rope find occurrences
+" <Leader>b     Set, unset breakpoint (g:pymode_breakpoint enabled)
+" [[            Jump on previous class or function (normal, visual, operator " modes)
+" ]]            Jump on next class or function (normal, visual, operator " modes)
+" [M            Jump on previous class or method (normal, visual, operator " modes)
+" ]M            Jump on next class or method (normal, visual, operator modes)
 map <Leader>g :call RepeGotoDefinition()<CR>
-let ropevim_enable_shortcuts = 1
-let g:pymode_repo_goto_def_newwin = "vnew"
-let g:pymode_repo_extended_complete = 1
-let g:pymode_breakpoint = 0
+let g:pymode_folding = 0
 let g:pymode_syntax = 1
-let g:pymode_syntax_builtin_objs = 0
-let g:pymode_syntax_builtin_funcs = 0
+let g:pymode_syntax_all = 1
+let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+let g:pymode_syntax_space_errors = g:pymode_syntax_all

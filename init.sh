@@ -11,6 +11,12 @@ sudo add-apt-repository ppa:git-core/ppa
 sudo apt-get update
 sudo apt-get install -y aptitude build-essential linux-headers-$(uname -r) python-dev cmake git vim openssh-server
 
+# Download dotfiles
+git init
+git remote add origin https://github.com/daniel-djx/dotfiles.git
+git pull origin master
+git branch --set-upstream-to=origin/master master
+
 # Install vim and plugins
 [[ -d .vim/bundle/Vundle.vim ]] \
   || git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -19,7 +25,8 @@ vim +PluginInstall +qall
 
 # Install python environment
 sudo apt-get install -y python-pip
-sudo pip install -U pip virtualenv virtualenvwrapper --index-url http://mirrors.aliyun.com/pypi/simple/
+sudo pip install -U pip virtualenv virtualenvwrapper \
+   --index-url http://mirrors.aliyun.com/pypi/simple/
 mkdir -p ~/workspace/pyproj
 cat >> ~/.bashrc <<_CAT;
 
