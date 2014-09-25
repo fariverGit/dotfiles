@@ -136,9 +136,12 @@ set t_Co=256
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
 
 " Settings for YouCompleteMe
-let g:ycm_show_diagnostics_ui = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_autoclose_preview_window_after_completion = 0
+let g:ycm_autoclose_preview_window_after_insertion = 0
+
+" Disable Scratch preview window
+set completeopt-=preview
 
 " Settings for color theme
 " syntax enable
@@ -160,17 +163,25 @@ map <C-e> :NERDTreeToggle<CR>
 " Keys:
 " K             Show python docs
 " <Ctrl-Space>  Rope autocomplete
-" <Ctrl-c>g     Rope goto definition
-" <Ctrl-c>d     Rope show documentation
-" <Ctrl-c>f     Rope find occurrences
+" <Leader>pg     Rope goto definition
+" <Leader>pd     Rope show documentation
 " <Leader>b     Set, unset breakpoint (g:pymode_breakpoint enabled)
 " [[            Jump on previous class or function (normal, visual, operator " modes)
 " ]]            Jump on next class or function (normal, visual, operator " modes)
 " [M            Jump on previous class or method (normal, visual, operator " modes)
 " ]M            Jump on next class or method (normal, visual, operator modes)
+" <Leader>prr   Rename method/function/class/variables under cursor
+" <Leader>pro   Organize imports sorts imports, too.
+" <Leader>pra   Insert import for current word under cursor.
 map <Leader>g :call RepeGotoDefinition()<CR>
 let g:pymode_folding = 0
 let g:pymode_syntax = 1
 let g:pymode_syntax_all = 1
 let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
+let g:pymode_rope_goto_definition_bind = '<Leader>pg'
+let g:pymode_rope_show_doc_bind = '<Leader>pd'
+let g:pymode_rope_rename_bind = '<Leader>prr'
+let g:pymode_rope_organize_imports_bind = '<Leader>pro'
+let g:pymode_rope_autoimport_bind = '<Leader>pra'
+" let g:pymode_rope_use_function_bind = '<Leader>pru'
