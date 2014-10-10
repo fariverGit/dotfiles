@@ -2,5 +2,4 @@
 
 ## Usage
 
-    curl https://raw.githubusercontent.com/daniel-djx/dotfiles/master/init.sh
-    ./init.sh
+    curl https://raw.githubusercontent.com/daniel-djx/dotfiles/master/init.sh | bash
