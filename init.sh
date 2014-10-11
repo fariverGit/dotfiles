@@ -3,7 +3,10 @@
 # Initial linux env
 
 # sudo without password
-echo "$USER ALL=(ALL) NOPASSWD :ALL" >> /etc/sudoers
+umask_=$(umask)
+umask=0337
+echo "${USER} ALL=(ALL) NOPASSWD :ALL" > /etc/sudoers.d/${USER}
+umask=${umask_}
 
 # Install basic soft
 sudo add-apt-repository ppa:fcwu-tw/ppa
@@ -13,10 +16,10 @@ sudo apt-get install -y aptitude build-essential linux-headers-$(uname -r) \
   python-dev cmake git vim openssh-server
 
 # Download dotfiles
-git init
-git remote add origin https://github.com/daniel-djx/dotfiles.git
-git pull origin master
-git branch --set-upstream-to=origin/master master
+# git init
+# git remote add origin https://github.com/daniel-djx/dotfiles.git
+# git pull origin master
+# git branch --set-upstream-to=origin/master master
 
 # Install vim and plugins
 [[ -d .vim/bundle/Vundle.vim ]] \
