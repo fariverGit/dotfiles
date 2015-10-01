@@ -110,6 +110,8 @@ set shiftwidth=4
 set shiftround
 set expandtab
 set nowrap
+autocmd Filetype html setlocal ts=2 sts=2 sw=2
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 
 " Settings for NERDCommenter
 let g:NERDSpaceDelims = 1
