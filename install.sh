@@ -1,4 +1,4 @@
-$!/bin/bash
+#!/bin/bash
 
 # deps
 # build-essential cmake python-dev
