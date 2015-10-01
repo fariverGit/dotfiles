@@ -20,7 +20,10 @@ Plugin 'honza/vim-snippets'
 " Plugin 'klen/python-mode'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-bundler'
 " ..........................................................................
 " plugin from http://vim-scripts.org/vim/scripts.html
 " ..........................................................................
@@ -110,8 +113,12 @@ set shiftwidth=4
 set shiftround
 set expandtab
 set nowrap
+
+au BufRead,BufNewFile *.scss set filetype=scss.css
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+autocmd Filetype scss setlocal ts=2 sts=2 sw=2
+autocmd Filetype css setlocal ts=2 sts=2 sw=2
 
 " Settings for NERDCommenter
 let g:NERDSpaceDelims = 1
@@ -152,11 +159,13 @@ set wildignore+=*.pyc
 set wildignore+=_build/*
 set wildignore+=*/coverage/*
 
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<leader><tab>"
-let g:UltiSnipsJumpForwardTrigger="<leader><tab>"
-let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>"
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
 
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
