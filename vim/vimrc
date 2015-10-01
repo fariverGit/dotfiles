@@ -1,0 +1,160 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/dotfiles/vim/bundle/Vundle.vim
+call vundle#begin('~/dotfiles/vim/bundle')
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+" ..........................................................................
+" Plugin 'tpope/vim-fugitive'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'mattn/emmet-vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'kien/ctrlp.vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+" Plugin 'klen/python-mode'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'Valloric/YouCompleteMe'
+" ..........................................................................
+" plugin from http://vim-scripts.org/vim/scripts.html
+" ..........................................................................
+" Plugin 'L9'
+" ..........................................................................
+" Git plugin not hosted on GitHub
+" ..........................................................................
+" Plugin 'git://git.wincent.com/command-t.git'
+" ..........................................................................
+" git repos on your local machine (i.e. when working on your own plugin)
+" ..........................................................................
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" ..........................................................................
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Avoid a name conflict with L9
+" Plugin 'user/L9', {'name': 'newL9'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+" Automatic reloading of .vimrc
+autocmd! bufwritepost .vimrc source %
+
+" Enable syntax highlighting
+" You need to reload this file for change to 
+filetype off
+filetype plugin indent on
+syntax enable
+syntax on
+
+" Better copy & paste
+set pastetoggle=<F2>
+set clipboard=unnamed
+
+" Rebind <Leader> key
+let mapleader = ","
+
+" Bind nohl
+" Removes hightlight of your last search
+noremap <C-n> :nohl<CR>
+vnoremap <C-n> :nohl<CR>
+inoremap <C-n> :nohl<CR>
+
+" Reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
+
+" Easy split navigation
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+map <C-h> <C-w>h
+
+" easier moving between tabs
+map <Leader>n <ESC>:tabprevious<CR>
+map <Leader>m <ESC>:tabnext<CR>
+
+" The Smash Escape
+inoremap jk <Esc>
+inoremap kj <Esc>
+
+" Insert blank lines without going into insert mode
+nmap t o<ESC>k
+nmap T O<ESC>j
+
+" Showing line numbers and length
+set number  " show line numbers
+
+" Real programmers don't use TABs but space
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set expandtab
+set nowrap
+
+" Settings for NERDCommenter
+let g:NERDSpaceDelims = 1
+let g:NERDRemoveExtraSpaces = 1
+
+" Make search case insensitive
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+" settings for cursor
+set ruler
+set cursorline
+set cursorcolumn
+
+" settings for fold
+set foldmethod=syntax
+set nofoldenable
+
+" Settings for Powerline
+set laststatus=2
+set t_Co=256
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+let g:Powerline_colorscheme='solarized256'
+
+" settings for color theme
+set background=dark
+colorscheme solarized
+
+
+" Settings for NERDTree
+map <C-e> :NERDTreeToggle<CR>
+
+" Settings for ctrlp
+" let g:ctrlp_max_height
+set wildignore+=*.pyc
+set wildignore+=_build/*
+set wildignore+=*/coverage/*
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<leader><tab>"
+let g:UltiSnipsJumpForwardTrigger="<leader><tab>"
+let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
