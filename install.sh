@@ -6,7 +6,6 @@
 _dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # install patched fonts
-[[ -L ~/.fonts ]] || ln -s "$_dir"/fonts ~/.fonts
 "$_dir"/fonts/install.sh
 
 # setup vim
