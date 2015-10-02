@@ -24,6 +24,7 @@ Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-surround'
 " ..........................................................................
 " plugin from http://vim-scripts.org/vim/scripts.html
 " ..........................................................................
@@ -117,6 +118,7 @@ set nowrap
 au BufRead,BufNewFile *.scss set filetype=scss.css
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+autocmd Filetype eruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype scss setlocal ts=2 sts=2 sw=2
 autocmd Filetype css setlocal ts=2 sts=2 sw=2
 
@@ -160,9 +162,9 @@ set wildignore+=_build/*
 set wildignore+=*/coverage/*
 
 " make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
+let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-j>'
 
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
