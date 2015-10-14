@@ -12,6 +12,9 @@ _dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ln -s "$_dir"/vim/vimrc ~/.vimrc
 [[ -d "$_dir"/vim/bundle/Vundle.vim ]] \
     || git clone https://github.com/gmarik/Vundle.vim.git "$_dir"/vim/bundle/Vundle.vim
-vim +PluginInstall +qall
+if [ -t 1 ]; then
+    vim +PluginInstall +qall
+else
+    "$_dir/pvi" -j 4 -b "$_dir/vim/bundle"
+fi
 "$_dir"/vim/bundle/YouCompleteMe/install.py
-
