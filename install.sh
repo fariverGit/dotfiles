@@ -15,6 +15,6 @@ ln -s "$_dir"/vim/vimrc ~/.vimrc
 if [ -t 1 ]; then
     vim +PluginInstall +qall
 else
-    "$_dir/pvi" -j 4 -b "$_dir/vim/bundle"
+    echo| echo | "$_dir/pvi" -j 4 -b "$_dir/vim/bundle"
 fi
 "$_dir"/vim/bundle/YouCompleteMe/install.py
