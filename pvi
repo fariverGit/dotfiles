@@ -137,7 +137,8 @@ class Task(object):
                 'git',
                 'clone',
                 uri,
-                os.path.join(os.path.expanduser(BUNDLES_DIR), name)
+                os.path.join(os.path.expanduser(BUNDLES_DIR), name),
+                '--recursive'
                 ], 'install'
 
 
