@@ -14,6 +14,7 @@ import multiprocessing
 import logging
 import tempfile
 import json
+from os.path import dirname, abspath, join
 
 # Third party imports
 
@@ -21,7 +22,7 @@ import json
 
 # ---------------------------------------------------------------------------
 
-BUNDLES_DIR = '/tmp/bundlesdir'
+BUNDLES_DIR = join(dirname(abspath(__file__)), 'vim', 'bundle')
 logger = multiprocessing.log_to_stderr()
 
 class Bundle(object):
