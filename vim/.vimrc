@@ -25,6 +25,7 @@ Plugin 'valloric/youcompleteme'
 Plugin 'raimondi/delimitmate'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'fatih/vim-go'
+Plugin 'altercation/vim-colors-solarized'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -60,8 +61,13 @@ autocmd! bufwritepost .vimrc source %
 " You need to reload this file for change to 
 filetype off
 filetype plugin indent on
-syntax enable
 syntax on
+
+“ colors
+syntax enable
+set background=dark
+set t_Co=16
+colorscheme solarized
 
 " Better copy & paste
 set pastetoggle=<F2>
