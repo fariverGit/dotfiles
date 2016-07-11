@@ -88,4 +88,4 @@ export GOPATH=/work/golang
 export PATH=$GOPATH/bin:/usr/local/go/bin:$PATH
 
 # z
-. $HOME/.z.sh
+. $HOME/.dotfiles/z/z.sh
