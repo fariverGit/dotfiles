@@ -21,6 +21,7 @@ apt-get install -y --no-install-recommends \
 # symlinks
 ln -sfv "$DOTFILES_DIR/vim" "$HOME/.vim"
 ln -sfv "$DOTFILES_DIR/vim/.vimrc" "$HOME/.vimrc"
+ln -sfv "$DOTFILES_DIR/z/z.sh" "$HOME/.z.sh"
 
 # installing vim plugins
 vim +PluginInstall +qall
@@ -29,4 +30,5 @@ $HOME/.vim/bundle/youcompleteme/install.py
 # installing oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ln -svf "$DOTFILES_DIR/themes/dracula/zsh/dracula.zsh-theme" "$HOME/.oh-my-zsh/themes/dracula.zsh-theme"
+ln -sfv "$DOTFILES_DIR/zshrc" "$HOME/.zshrc"
 sed -i -r -e 's/(ZSH_THEME=").*(")/\1dracula\2/g' $HOME/.zshrc

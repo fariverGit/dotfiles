@@ -17,5 +17,5 @@ curl -fsSL "$GOLANG_DOWNLOAD_URL" -o golang.tar.gz \
 	&& tar -C /usr/local -xzf golang.tar.gz \
 	&& rm golang.tar.gz
 
-export GOPATH=/go
-export PATH=$GOPATH/bin:/usr/local/go/bin:$PATH
+# export GOPATH=/work/go
+# export PATH=$GOPATH/bin:/usr/local/go/bin:$PATH
