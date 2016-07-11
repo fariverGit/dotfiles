@@ -31,4 +31,3 @@ $HOME/.vim/bundle/youcompleteme/install.py
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ln -svf "$DOTFILES_DIR/themes/dracula/zsh/dracula.zsh-theme" "$HOME/.oh-my-zsh/themes/dracula.zsh-theme"
 ln -sfv "$DOTFILES_DIR/zshrc" "$HOME/.zshrc"
-sed -i -r -e 's/(ZSH_THEME=").*(")/\1dracula\2/g' $HOME/.zshrc
