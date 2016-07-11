@@ -127,6 +127,8 @@ set smartcase
 set ruler
 set cursorline
 set cursorcolumn
+hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 
 " settings for fold
 set foldmethod=syntax
