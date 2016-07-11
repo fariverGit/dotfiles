@@ -63,7 +63,7 @@ filetype off
 filetype plugin indent on
 syntax on
 
-“ colors
+" colors
 syntax enable
 set background=dark
 set t_Co=16
