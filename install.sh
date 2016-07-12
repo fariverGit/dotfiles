@@ -21,6 +21,7 @@ apt-get install -y --no-install-recommends \
 # symlinks
 ln -sfv "$DOTFILES_DIR/vim" "$HOME/.vim"
 ln -sfv "$DOTFILES_DIR/vim/.vimrc" "$HOME/.vimrc"
+ln -sfv "$DOTFILES_DIR/.env" "$HOME/.env"
 
 # installing vim plugins
 vim +PluginInstall +qall
