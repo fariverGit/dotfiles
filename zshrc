@@ -83,9 +83,4 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# golang settings
-export GOPATH=/work/golang
-export PATH=$GOPATH/bin:/usr/local/go/bin:$PATH
-
-# z
-. $HOME/.dotfiles/z/z.sh
+. "~/.env"
