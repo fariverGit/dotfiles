@@ -96,6 +96,14 @@ map <C-h> <C-w>h
 map <Leader>n <ESC>:tabprevious<CR>
 map <Leader>m <ESC>:tabnext<CR>
 
+" easier jump next
+map <Leader>ln <ESC>:lnext<CR>
+map <Leader>lp <ESC>:lprevious<CR>
+
+" easer syntastic chec
+map <Leader>st <ESC>:SyntasticToggleMode<CR>
+map <Leader>sc <ESC>:SyntasticChec<CR>
+
 " The Smash Escape
 inoremap jk <Esc>
 inoremap kj <Esc>

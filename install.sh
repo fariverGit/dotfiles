@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-set -e
+set -ex
 
 export DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-# # deps
+# deps
 apt-get update
 apt-get install -y --no-install-recommends \
         build-essential \
@@ -28,6 +28,7 @@ vim +PluginInstall +qall
 $HOME/.vim/bundle/youcompleteme/install.py
 
 # installing oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" ||  true
 ln -svf "$DOTFILES_DIR/themes/dracula/zsh/dracula.zsh-theme" "$HOME/.oh-my-zsh/themes/dracula.zsh-theme"
 echo 'source ~/.env' >> ~/.zshrc
+
