@@ -30,4 +30,4 @@ $HOME/.vim/bundle/youcompleteme/install.py
 # installing oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ln -svf "$DOTFILES_DIR/themes/dracula/zsh/dracula.zsh-theme" "$HOME/.oh-my-zsh/themes/dracula.zsh-theme"
-ln -sfv "$DOTFILES_DIR/zshrc" "$HOME/.zshrc"
+echo 'source ~/.env' >> ~/.zshrc
