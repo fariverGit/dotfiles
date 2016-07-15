@@ -9,6 +9,7 @@ apt-get install -y --no-install-recommends \
         build-essential \
         ca-certificates \
         cmake \
+        cscope \
         curl \
         exuberant-ctags \
         git \
