@@ -12,6 +12,7 @@ apt-get install -y --no-install-recommends \
         cscope \
         curl \
         exuberant-ctags \
+        fontconfig \
         git \
         python \
         python-dev \
@@ -23,6 +24,9 @@ apt-get install -y --no-install-recommends \
 ln -sfv "$DOTFILES_DIR/vim" "$HOME/.vim"
 ln -sfv "$DOTFILES_DIR/vim/.vimrc" "$HOME/.vimrc"
 ln -sfv "$DOTFILES_DIR/env" "$HOME/.env"
+
+# installing powerline fonts
+$DOTFILES_DIR/fonts/install.sh
 
 # installing vim plugins
 vim +PluginInstall +qall

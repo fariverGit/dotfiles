@@ -68,6 +68,7 @@ syntax enable
 set background=dark
 set t_Co=16
 colorscheme solarized
+let g:solarized_termcolors=256
 
 " Better copy & paste
 set pastetoggle=<F2>
@@ -195,6 +196,9 @@ let g:syntastic_check_on_wq = 0
 " settings for vim-airline
 set laststatus=2
 let g:airline_theme = "cool"
+let g:airline_powerline_fonts=1
+let g:solarized_base16 = 1
+let g:airline_solarized_normal_green = 1
 
 " settings for Tagbar
 nmap <F8> :TagbarToggle<CR>
