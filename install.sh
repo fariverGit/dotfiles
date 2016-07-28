@@ -26,14 +26,15 @@ ln -sfv "$DOTFILES_DIR/vim/.vimrc" "$HOME/.vimrc"
 ln -sfv "$DOTFILES_DIR/env" "$HOME/.env"
 
 # installing powerline fonts
-$DOTFILES_DIR/fonts/install.sh
+# $DOTFILES_DIR/fonts/install.sh
 
 # installing vim plugins
 vim +PluginInstall +qall
-$HOME/.vim/bundle/youcompleteme/install.py
+$HOME/.vim/bundle/youcompleteme/install.py --clang-completer
 
 # installing oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" ||  true
 ln -svf "$DOTFILES_DIR/themes/dracula/zsh/dracula.zsh-theme" "$HOME/.oh-my-zsh/themes/dracula.zsh-theme"
 echo 'source ~/.env' >> ~/.zshrc
+echo 'source ~/.dotfiles/bin/functions' >> ~/.zshrc
 
