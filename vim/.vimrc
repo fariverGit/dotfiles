@@ -30,6 +30,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'ervandew/supertab'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'editorconfig/editorconfig-vim'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -62,7 +63,7 @@ filetype plugin indent on    " required
 autocmd! bufwritepost .vimrc source %
 
 " Enable syntax highlighting
-" You need to reload this file for change to 
+" You need to reload this file for change to
 filetype off
 filetype plugin indent on
 syntax on
@@ -127,13 +128,6 @@ set shiftwidth=4
 set shiftround
 set expandtab
 set nowrap
-
-au BufRead,BufNewFile *.scss set filetype=scss.css
-autocmd Filetype html setlocal ts=2 sts=2 sw=2
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
-autocmd Filetype eruby setlocal ts=2 sts=2 sw=2
-autocmd Filetype scss setlocal ts=2 sts=2 sw=2
-autocmd Filetype css setlocal ts=2 sts=2 sw=2
 
 " Make search case insensitive
 set hlsearch
@@ -237,3 +231,6 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" settings for youcompleteme
+let g:ycm_autoclose_preview_window_after_completion=1

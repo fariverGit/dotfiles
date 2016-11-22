@@ -1,7 +1,7 @@
 
 # golang settings
-export GOPATH=/work/golang
-export PATH=$GOPATH/bin:/usr/local/go/bin:$PATH
+# export GOPATH=/work/golang
+# export PATH=$GOPATH/bin:/usr/local/go/bin:$PATH
 
 # z
 . $HOME/.dotfiles/z/z.sh
