@@ -20,10 +20,14 @@ apt-get install -y --no-install-recommends \
         wget \
         zsh
 
+# install latest vim
+bash $DOTFILES_DIR/vim/ubuntu_install.sh
+
 # symlinks
 ln -sfv "$DOTFILES_DIR/vim" "$HOME/.vim"
 ln -sfv "$DOTFILES_DIR/vim/.vimrc" "$HOME/.vimrc"
 ln -sfv "$DOTFILES_DIR/env" "$HOME/.env"
+ln -sfv "$DOTFILES_DIR/.editorconfig" "$HOME/.editorconfig"
 
 # installing powerline fonts
 # $DOTFILES_DIR/fonts/install.sh
